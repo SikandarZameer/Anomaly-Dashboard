@@ -11,7 +11,7 @@ export default class doctorsChart extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ padding: "15px" }}>
         <Grid container spacing={4} justify="space-between">
           <Grid item xs={12}>
             <Card>

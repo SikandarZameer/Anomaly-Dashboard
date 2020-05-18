@@ -43,6 +43,7 @@ const data = {
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   cornerRadius: 80,
   barValueSpacing: 10,
   legend: {
