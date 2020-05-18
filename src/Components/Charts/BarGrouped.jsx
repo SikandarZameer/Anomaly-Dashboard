@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "chartjs-top-round-bar";
-import "./Chart.roundedBarCharts";
+// import "chartjs-top-round-bar";
+// import "./Chart.roundedBarCharts";
 import { Bar } from "react-chartjs-2";
 
 const data = {

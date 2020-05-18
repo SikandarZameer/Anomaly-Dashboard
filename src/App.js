@@ -1,18 +1,19 @@
 import React from "react";
-import BarGrouped from "./Components/Charts/BarGrouped";
-import LineCust from "./Components/Charts/LineCust";
-import Linestacked from "./Components/Charts/Linestacked";
-import DChart from "./Components/Charts/Doughnut";
-
+// import BarGrouped from "./Components/Charts/BarGrouped";
+// import LineCust from "./Components/Charts/LineCust";
+// import Linestacked from "./Components/Charts/Linestacked";
+// import DChart from "./Components/Charts/Doughnut";
+import PatientAnomalyDashboard from "./Components/Screens/PatientAnomalyDashboard";
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <BarGrouped />
+      {/* <BarGrouped />
       <LineCust />
       <Linestacked />
-      <DChart />
+      <DChart /> */}
+      <PatientAnomalyDashboard />
     </div>
   );
 }

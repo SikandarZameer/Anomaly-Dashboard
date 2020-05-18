@@ -28,11 +28,21 @@ const data = {
   ]
 };
 
+const options = {
+  maintainAspectRatio: false,
+  responsive: true,
+  cornerRadius: 80,
+  barValueSpacing: 10,
+  legend: {
+    display: false
+  }
+};
+
 export default class LineCust extends Component {
   render() {
     return (
       <div>
-        <Line ref="chart" data={data} />
+        <Line data={data} options={options} />
       </div>
     );
   }
