@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Typography, Card, CardContent } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 // import Select from "react-select";
 import BarGrouped from "../Charts/BarGrouped";
 import DChart from "../Charts/Doughnut";
@@ -15,14 +15,7 @@ export default class doctorsChart extends Component {
         <div style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              <Card>
-                <CardContent>
-                  <Typography align="left" variant="h6">
-                    Percentage Anomalies
-                  </Typography>
-                  <BarGrouped />
-                </CardContent>
-              </Card>
+              <ChartCard title="Percentage Anomalies" chart={<BarGrouped />} />
             </Grid>
 
             <Grid item xs={4}>

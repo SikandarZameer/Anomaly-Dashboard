@@ -65,7 +65,7 @@ export default class BarGrouped extends Component {
   render() {
     return (
       <div>
-        <Bar data={data} options={options} />
+        <Bar data={data} options={options} height="215%" />
       </div>
     );
   }
