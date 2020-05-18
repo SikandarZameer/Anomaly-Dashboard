@@ -1,11 +1,11 @@
 import React from "react";
+import BarGrouped from "./Components/Charts/BarGrouped";
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start Editing to see some magic happen!</h2>
+      <BarGrouped />
     </div>
   );
 }
