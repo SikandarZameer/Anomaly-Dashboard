@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Typography } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import { Grid, Typography, Card, CardContent } from "@material-ui/core";
 import Select from "react-select";
 import LineCust from "../Charts/LineCust";
 import Linestacked from "../Charts/Linestacked";
@@ -14,7 +12,7 @@ export default class doctorsChart extends Component {
   render() {
     return (
       <div>
-        <Grid container spacing={2}>
+        <Grid container spacing={4} justify="space-between">
           <Grid item xs={12}>
             <Card>
               <CardContent>
@@ -23,7 +21,7 @@ export default class doctorsChart extends Component {
             </Card>
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justify="space-between">
           <Grid item xs={4}>
             <Card>
               <CardContent>
