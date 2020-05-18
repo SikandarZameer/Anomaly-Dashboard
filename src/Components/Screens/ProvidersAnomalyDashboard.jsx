@@ -17,6 +17,9 @@ export default class doctorsChart extends Component {
             <Grid item xs={8}>
               <Card>
                 <CardContent>
+                  <Typography styles={{ textAlign: "start" }} variant="h6">
+                    Percentage Anomalies
+                  </Typography>
                   <BarGrouped />
                 </CardContent>
               </Card>
