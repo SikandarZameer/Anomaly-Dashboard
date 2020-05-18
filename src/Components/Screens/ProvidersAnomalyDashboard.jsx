@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Grid, Typography, Card, CardContent } from "@material-ui/core";
-import Select from "react-select";
+// import Select from "react-select";
 import BarGrouped from "../Charts/BarGrouped";
 import DChart from "../Charts/Doughnut";
-
+import ChartCard from "../Cards/ChartCard";
 export default class doctorsChart extends Component {
   // constructor(props) {
   //   super(props);
@@ -12,12 +12,12 @@ export default class doctorsChart extends Component {
   render() {
     return (
       <div style={{ padding: "15px" }}>
-        <div>
+        <div style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Grid container spacing={2}>
             <Grid item xs={8}>
               <Card>
                 <CardContent>
-                  <Typography styles={{ textAlign: "start" }} variant="h6">
+                  <Typography align="left" variant="h6">
                     Percentage Anomalies
                   </Typography>
                   <BarGrouped />
@@ -26,54 +26,30 @@ export default class doctorsChart extends Component {
             </Grid>
 
             <Grid item xs={4}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Total Anomalies" chart={<DChart />} />
             </Grid>
           </Grid>
         </div>
         <div style={{ marginTop: "20px" }}>
           <Grid container spacing={1} justify="space-around">
             <Grid item xs={2}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Hospital" chart={<DChart />} />
             </Grid>
 
             <Grid item xs={2}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Doctor" chart={<DChart />} />
             </Grid>
 
             <Grid item xs={2}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Pharmacy" chart={<DChart />} />
             </Grid>
 
             <Grid item xs={2}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Labortary" chart={<DChart />} />
             </Grid>
 
             <Grid item xs={2}>
-              <Card>
-                <CardContent>
-                  <DChart />
-                </CardContent>
-              </Card>
+              <ChartCard title="Patient" chart={<DChart />} />
             </Grid>
           </Grid>
         </div>
