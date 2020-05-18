@@ -12,64 +12,68 @@ export default class doctorsChart extends Component {
   render() {
     return (
       <div style={{ padding: "15px" }}>
-        <Grid container spacing={4}>
-          <Grid item xs={8}>
-            <Card>
-              <CardContent>
-                <BarGrouped />
-              </CardContent>
-            </Card>
-          </Grid>
+        <div>
+          <Grid container spacing={2}>
+            <Grid item xs={8}>
+              <Card>
+                <CardContent>
+                  <BarGrouped />
+                </CardContent>
+              </Card>
+            </Grid>
 
-          <Grid item xs={4}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
+            <Grid item xs={4}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={4} justify="flex-start">
-          <Grid item xs={2}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
-          </Grid>
+        </div>
+        <div style={{ marginTop: "20px" }}>
+          <Grid container spacing={1} justify="space-around">
+            <Grid item xs={2}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
 
-          <Grid item xs={2}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
-          </Grid>
+            <Grid item xs={2}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
 
-          <Grid item xs={2}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
-          </Grid>
+            <Grid item xs={2}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
 
-          <Grid item xs={2}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
-          </Grid>
+            <Grid item xs={2}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
 
-          <Grid item xs={2}>
-            <Card>
-              <CardContent>
-                <DChart />
-              </CardContent>
-            </Card>
+            <Grid item xs={2}>
+              <Card>
+                <CardContent>
+                  <DChart />
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
     );
   }
