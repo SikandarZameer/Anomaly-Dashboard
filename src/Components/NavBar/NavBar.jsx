@@ -10,6 +10,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import SearchBar from "./SearchBar";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,6 +47,7 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
+      <CssBaseline />
       <AppBar className={classes.Appbar} position="static">
         <Toolbar>
           <Button className={classes.buttonRoot} variant="text" color="#fff">
