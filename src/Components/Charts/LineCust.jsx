@@ -31,8 +31,6 @@ const data = {
 const options = {
   maintainAspectRatio: false,
   responsive: true,
-  cornerRadius: 80,
-  barValueSpacing: 10,
   legend: {
     display: false
   }
