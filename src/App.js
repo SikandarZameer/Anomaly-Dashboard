@@ -4,9 +4,9 @@ import React from "react";
 // import Linestacked from "./Components/Charts/Linestacked";
 // import DChart from "./Components/Charts/Doughnut";
 // import PatientAnomalyDashboard from "./Components/Screens/PatientAnomalyDashboard";
-// import ProvidersAnomalyDashboard from "./Components/Screens/ProvidersAnomalyDashboard";
+import ProvidersAnomalyDashboard from "./Components/Screens/ProvidersAnomalyDashboard";
 import "./styles.css";
-import BarStacked from "./Components/Charts/BarStacked";
+// import BarStacked from "./Components/Charts/BarStacked";
 
 export default function App() {
   return (
@@ -15,9 +15,9 @@ export default function App() {
       <LineCust />
       <Linestacked />
       <DChart /> */}
-      <BarStacked />
+      {/* <BarStacked /> */}
       {/* <PatientAnomalyDashboard /> */}
-      {/* <ProvidersAnomalyDashboard /> */}
+      <ProvidersAnomalyDashboard />
     </div>
   );
 }
