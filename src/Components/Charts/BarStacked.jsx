@@ -11,7 +11,7 @@ const data = {
       backgroundColor: "#2E5BFF",
       borderColor: "#2E5BFF",
       borderWidth: 0.3,
-      barThickness: "flex",
+      barThickness: 20,
       hoverBackgroundColor: "#2E5BFF",
       hoverBorderColor: "#2E5BFF",
       data: [65, 59, 80, 81, 56]
@@ -22,7 +22,7 @@ const data = {
       backgroundColor: "#2CC2A5",
       borderColor: "#2CC2A5",
       borderWidth: 0.3,
-      barThickness: "flex",
+      barThickness: 20,
       hoverBackgroundColor: "#2CC2A5",
       hoverBorderColor: "#2CC2A5",
       data: [45, 79, 50, 41, 16]
@@ -33,7 +33,7 @@ const data = {
       backgroundColor: "#8C54FF",
       borderColor: "#8C54FF",
       borderWidth: 0.3,
-      barThickness: "flex",
+      barThickness: 20,
       hoverBackgroundColor: "#8C54FF",
       hoverBorderColor: "#8C54FF",
       data: [35, 99, 100, 61, 6]
@@ -45,14 +45,19 @@ const options = {
   responsive: true,
   maintainAspectRatio: false,
   cornerRadius: 80,
-  barValueSpacing: 10,
   legend: {
     display: false
   },
   type: "bar",
   scales: {
+    xAxes: [
+      {
+        stacked: true
+      }
+    ],
     yAxes: [
       {
+        stacked: true,
         ticks: {
           beginAtZero: true
         }
@@ -61,7 +66,7 @@ const options = {
   }
 };
 
-export default class BarGrouped extends Component {
+export default class BarStacked extends Component {
   render() {
     return (
       <div>

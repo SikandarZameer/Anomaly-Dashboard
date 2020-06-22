@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid } from "@material-ui/core";
+import CssBaseline from '@material-ui/core/CssBaseline';
 // import Select from "react-select";
 import BarGrouped from "../Charts/BarGrouped";
 import DChart from "../Charts/Doughnut";
@@ -11,8 +12,9 @@ export default class doctorsChart extends Component {
 
   render() {
     return (
-      <div style={{ padding: "15px" }}>
-        <div style={{ marginLeft: "20px", marginRight: "20px" }}>
+      <div style={{ padding: "15px", height:'100vh' }}>
+        <CssBaseline />
+        <div style={{ marginLeft: "20px",height:'50%', marginRight: "20px" }}>
           <Grid container spacing={2}>
             <Grid item xs={8}>
               <ChartCard title="Percentage Anomalies" chart={<BarGrouped />} />
@@ -23,8 +25,8 @@ export default class doctorsChart extends Component {
             </Grid>
           </Grid>
         </div>
-        <div style={{ marginTop: "20px" }}>
-          <Grid container spacing={1} justify="space-around">
+        <div style={{ marginTop: "10px", height:'50%' }}>
+          <Grid container  justify="space-around">
             <Grid item xs={2}>
               <ChartCard title="Hospital" chart={<DChart />} />
             </Grid>
