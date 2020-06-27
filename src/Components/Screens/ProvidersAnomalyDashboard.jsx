@@ -42,7 +42,11 @@ export default class doctorsChart extends Component {
       .then(([res1, res2, res3, res4]) => {
         this.setState(st => {
           return {
-            isLoaded: true
+            isLoaded: true,
+            barGroupedData: res1,
+            doughnutData: res2,
+            stackedBarData_1: res3,
+            stackedBarData_2: res4
           };
         });
       })
