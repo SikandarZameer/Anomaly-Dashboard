@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -13,7 +13,7 @@ import Avatar from "@material-ui/core/Avatar";
 import SearchBar from "./SearchBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     flexGrow: 1
   },
@@ -48,91 +48,112 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(2)
     }
   }
-}));
+});
 
-const NavBar = () => {
-  const classes = useStyles();
+// const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar className={classes.Appbar} position="fixed">
-        <Toolbar className={classes.customizeToolbar}>
-          <Button
-            className={classes.buttonRoot}
-            activeClassName={classes.active}
-            exact
-            disableRipple
-            disableFocusRipple
-            disableElevation
-            component={NavLink}
-            to="/home"
-            color="#fff"
-          >
-            Home
-          </Button>
-          <Button
-            className={classes.buttonRoot}
-            activeClassName={classes.active}
-            exact
-            disableRipple
-            disableFocusRipple
-            disableElevation
-            component={NavLink}
-            to="/patientanomalydashboard"
-            color="#fff"
-          >
-            Time Series Analysis
-          </Button>
-          <Grid
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="center"
-          >
-            <Grid item xs={1} />
-            <Grid item xs={7}>
-              <div className={classes.divSearch}>
-                <SearchBar />
-              </div>
-            </Grid>
-            <Grid item xs={1} />
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todisplay: false
+    };
+  }
+
+  handleAnalysisClick = () => {
+    this.setState({ todisplay: true });
+  };
+
+  handleHomeClick = () => {
+    this.setState({ todisplay: false });
+  };
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar className={classes.Appbar} position="fixed">
+          <Toolbar className={classes.customizeToolbar}>
+            <Button
+              className={classes.buttonRoot}
+              activeClassName={classes.active}
+              exact
+              disableRipple
+              disableFocusRipple
+              disableElevation
+              onClick={this.handleHomeClick}
+              component={NavLink}
+              to="/home"
+              color="#fff"
+            >
+              Home
+            </Button>
+            <Button
+              className={classes.buttonRoot}
+              activeClassName={classes.active}
+              exact
+              disableRipple
+              disableFocusRipple
+              disableElevation
+              onClick={this.handleAnalysisClick}
+              component={NavLink}
+              to="/patientanomalydashboard"
+              color="#fff"
+            >
+              Time Series Analysis
+            </Button>
             <Grid
-              item
               container
-              xs={3}
               direction="row"
-              justify="flex-end"
+              justify="space-between"
               alignItems="center"
             >
-              <Grid item>
-                <IconButton
-                  style={{ marginRight: "5px" }}
-                  aria-label="show 17 new notifications"
-                >
-                  <Badge badgeContent={200} color="secondary">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
+              <Grid item xs={1} />
+              <Grid item xs={7}>
+                <div className={classes.divSearch}>
+                  {this.state.todisplay && <SearchBar />}
+                </div>
               </Grid>
-              <Grid item>
-                <Avatar src="/broken-image.jpg" classname={classes.avatar} />
-              </Grid>
-              <Grid item>
-                <Typography
-                  className={classes.typography}
-                  variant="subtitle2"
-                  color="textPrimary"
-                  display="inline"
-                >
-                  Hi, Analyst
-                </Typography>
+              <Grid item xs={1} />
+              <Grid
+                item
+                container
+                xs={3}
+                direction="row"
+                justify="flex-end"
+                alignItems="center"
+              >
+                <Grid item>
+                  <IconButton
+                    style={{ marginRight: "5px" }}
+                    aria-label="show 17 new notifications"
+                  >
+                    <Badge badgeContent={200} color="secondary">
+                      <NotificationsIcon />
+                    </Badge>
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <Avatar src="/broken-image.jpg" classname={classes.avatar} />
+                </Grid>
+                <Grid item>
+                  <Typography
+                    className={classes.typography}
+                    variant="subtitle2"
+                    color="textPrimary"
+                    display="inline"
+                  >
+                    Hi, Analyst
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-};
-export default NavBar;
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
+}
+
+export default withStyles(styles)(NavBar);
