@@ -112,7 +112,9 @@ class NavBar extends Component {
               <Grid item xs={1} />
               <Grid item xs={7}>
                 <div className={classes.divSearch}>
-                  {this.state.todisplay && <SearchBar />}
+                  {this.state.todisplay && (
+                    <SearchBar callback_func={this.props.callback_func} />
+                  )}
                 </div>
               </Grid>
               <Grid item xs={1} />
