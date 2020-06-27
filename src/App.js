@@ -13,7 +13,6 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={ProvidersAnomalyDashboard} />
         <Route exact path="/home" component={ProvidersAnomalyDashboard} />
-
         <Route
           exact
           path="/patientanomalydashboard"

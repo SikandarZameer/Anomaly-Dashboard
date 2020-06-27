@@ -121,6 +121,7 @@ const NavBar = () => {
               <Grid item>
                 <Typography
                   className={classes.typography}
+                  variant="subtitle2"
                   color="textPrimary"
                   display="inline"
                 >

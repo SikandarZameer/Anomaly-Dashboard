@@ -30,7 +30,6 @@ export default class doctorsChart extends Component {
           style={{
             marginTop: "5px",
             marginLeft: "20px",
-
             marginRight: "20px"
           }}
         >
