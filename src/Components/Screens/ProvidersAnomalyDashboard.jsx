@@ -7,14 +7,30 @@ import BarStacked from "../Charts/BarStacked";
 import DChart from "../Charts/Doughnut";
 import ChartCard from "../Cards/ChartCard";
 
+const url1 = "";
+const url2 = "";
+const url3 = "";
+const url4 = "";
+
 export default class doctorsChart extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isLoaded: false,
+      barGroupedData: null,
+      doughnutData: null,
+      stackedBarData_1: null,
+      stackedBarData_2: null
+    };
   }
 
   componentDidMount() {
-    Promise.all([fetch("url1"), fetch("url2"), fetch("url3"), fetch("url4")])
+    Promise.all([
+      fetch({ url1 }),
+      fetch({ url2 }),
+      fetch({ url3 }),
+      fetch({ url4 })
+    ])
 
       .then(([res1, res2, res3, res4]) => {
         return Promise.all([
@@ -25,7 +41,11 @@ export default class doctorsChart extends Component {
         ]);
       })
       .then(([res1, res2, res3, res4]) => {
-        // set state in here
+        this.setState(st => {
+          return {
+            isLoaded: true
+          };
+        });
       })
       .catch(err => console.log(err));
   }
