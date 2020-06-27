@@ -17,10 +17,10 @@ export default class doctorsChart extends Component {
     super(props);
     this.state = {
       isLoaded: false,
-      barGroupedData: null,
-      doughnutData: null,
-      stackedBarData_1: null,
-      stackedBarData_2: null
+      barGroupedData: {},
+      doughnutData: [],
+      stackedBarData_1: {},
+      stackedBarData_2: {}
     };
   }
 
@@ -31,7 +31,6 @@ export default class doctorsChart extends Component {
       fetch({ url3 }),
       fetch({ url4 })
     ])
-
       .then(([res1, res2, res3, res4]) => {
         return Promise.all([
           res1.json(),

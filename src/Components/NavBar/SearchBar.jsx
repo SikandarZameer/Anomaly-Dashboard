@@ -8,7 +8,6 @@ const useStyles = makeStyles(theme => ({
     "& > *": {
       margin: theme.spacing(),
       backgroundColor: "lightgrey",
-      color: "red",
       borderRadius: `15px`
     }
   },
