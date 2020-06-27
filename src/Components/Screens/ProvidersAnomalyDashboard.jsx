@@ -6,10 +6,29 @@ import BarGrouped from "../Charts/BarGrouped";
 import BarStacked from "../Charts/BarStacked";
 import DChart from "../Charts/Doughnut";
 import ChartCard from "../Cards/ChartCard";
+
 export default class doctorsChart extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    Promise.all([fetch("url1"), fetch("url2"), fetch("url3"), fetch("url4")])
+
+      .then(([res1, res2, res3, res4]) => {
+        return Promise.all([
+          res1.json(),
+          res2.json(),
+          res3.json(),
+          res4.json()
+        ]);
+      })
+      .then(([res1, res2, res3, res4]) => {
+        // set state in here
+      })
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
