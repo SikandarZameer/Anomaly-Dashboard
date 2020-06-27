@@ -7,41 +7,11 @@ import LineCust from "../Charts/LineCust";
 import BarStacked from "../Charts/BarStacked";
 import ChartCard from "../Cards/ChartCard";
 
-const url1 = "";
-const url2 = "";
-const url3 = "";
-
 export default class doctorsChart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: false,
-      lineGraphData: [],
-      stackedBarData_1: {},
-      stackedBarData_2: {},
-    };
-  }
-  componentDidMount() {
-    Promise.all([
-      fetch(`${url1}/${this.props.patient_id}`),
-      fetch(`${url2}/${this.props.patient_id}`),
-      fetch(`${url3}/${this.props.patient_id}`),
-    ])
-      .then(([res1, res2, res3]) => {
-        return Promise.all([res1.json(), res2.json(), res3.json()]);
-      })
-      .then(([res1, res2, res3]) => {
-        this.setState((st) => {
-          return {
-            isLoaded: true,
-            lineGraphData: res1,
-            stackedBarData_1: res2,
-            stackedBarData_2: res3,
-          };
-        });
-      })
-      .catch((err) => console.log(err));
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
+
   render() {
     return (
       <div style={{ padding: "15px", marginTop: "40px" }}>
@@ -57,7 +27,7 @@ export default class doctorsChart extends Component {
           style={{
             marginTop: "5px",
             marginLeft: "20px",
-            marginRight: "20px",
+            marginRight: "20px"
           }}
         >
           <Grid container spacing={1}>
