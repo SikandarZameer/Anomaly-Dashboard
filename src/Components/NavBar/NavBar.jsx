@@ -13,41 +13,41 @@ import Avatar from "@material-ui/core/Avatar";
 import SearchBar from "./SearchBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   buttonRoot: {
-    minWidth: "fit-content"
+    minWidth: "fit-content",
   },
   active: {
     // fontSize: "15px",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   Appbar: {
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
   },
   customizeToolbar: {
-    minHeight: 36
+    minHeight: 36,
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   divSearch: {
     width: "100%",
-    margin: "0px 15px"
+    margin: "0px 15px",
   },
   typography: {
     marginLeft: "10px",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatar: {
     display: "flex",
     "& > *": {
-      margin: theme.spacing(2)
-    }
-  }
+      margin: theme.spacing(2),
+    },
+  },
 });
 
 // const classes = useStyles();
@@ -56,7 +56,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todisplay: false
+      todisplay: false,
     };
   }
 
@@ -112,7 +112,9 @@ class NavBar extends Component {
               <Grid item xs={1} />
               <Grid item xs={7}>
                 <div className={classes.divSearch}>
-                  {this.state.todisplay && <SearchBar />}
+                  {this.state.todisplay && (
+                    <SearchBar callback_func={this.props.callback_func} />
+                  )}
                 </div>
               </Grid>
               <Grid item xs={1} />

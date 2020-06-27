@@ -3,23 +3,23 @@ import { makeStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(),
       backgroundColor: "lightgrey",
-      borderRadius: `15px`
-    }
+      borderRadius: `15px`,
+    },
   },
   ib: {
-    padding: "1px 15px"
+    padding: "1px 15px",
   },
   inputMaginDense: {
-    paddingLeft: "5px"
-  }
+    paddingLeft: "5px",
+  },
 }));
 
-const SearchBar = () => {
+const SearchBar = ({ callback_func }) => {
   const classes = useStyles();
 
   return (
@@ -27,10 +27,11 @@ const SearchBar = () => {
       <InputBase
         className={classes.ib}
         classes={{ inputMarginDense: classes.inputMaginDense }}
-        placeholder="Search"
+        placeholder="Enter Patient ID "
         fullWidth
         margin="dense"
         startAdornment={<SearchIcon />}
+        onChange={callback_func}
       />
     </form>
   );
