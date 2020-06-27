@@ -40,7 +40,7 @@ export default class LineCust extends Component {
   render() {
     return (
       <div>
-        <Line data={data} options={options} />
+        <Line data={data} options={options} height="215%" />
       </div>
     );
   }

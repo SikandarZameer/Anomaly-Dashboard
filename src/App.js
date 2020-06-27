@@ -1,24 +1,25 @@
 import React from "react";
-// import BarGrouped from "./Components/Charts/BarGrouped";
-// import LineCust from "./Components/Charts/LineCust";
-// import Linestacked from "./Components/Charts/Linestacked";
-// import DChart from "./Components/Charts/Doughnut";
-// import PatientAnomalyDashboard from "./Components/Screens/PatientAnomalyDashboard";
-// import ProvidersAnomalyDashboard from "./Components/Screens/ProvidersAnomalyDashboard";
-import "./styles.css";
-// import BarStacked from "./Components/Charts/BarStacked";
+import { Route, Switch } from "react-router-dom";
+import PatientAnomalyDashboard from "./Components/Screens/PatientAnomalyDashboard";
+import ProvidersAnomalyDashboard from "./Components/Screens/ProvidersAnomalyDashboard";
 import NavBar from "./Components/NavBar/NavBar";
+
+import "./styles.css";
+
 export default function App() {
   return (
-    <div className="App">
-      {/* <BarGrouped />
-      <LineCust />
-      <Linestacked />
-      <DChart /> */}
-      {/* <BarStacked /> */}
-      {/* <PatientAnomalyDashboard /> */}
-      {/* <ProvidersAnomalyDashboard /> */}
+    <div className="App" style={{ height: "100%" }}>
       <NavBar />
+      <Switch>
+        <Route exact path="/" component={ProvidersAnomalyDashboard} />
+        <Route exact path="/home" component={ProvidersAnomalyDashboard} />
+
+        <Route
+          exact
+          path="/patientanomalydashboard"
+          component={PatientAnomalyDashboard}
+        />
+      </Switch>
     </div>
   );
 }

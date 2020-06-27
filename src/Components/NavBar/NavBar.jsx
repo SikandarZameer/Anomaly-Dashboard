@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -19,8 +20,15 @@ const useStyles = makeStyles(theme => ({
   buttonRoot: {
     minWidth: "fit-content"
   },
+  active: {
+    // fontSize: "15px",
+    fontWeight: "bold"
+  },
   Appbar: {
     backgroundColor: "#fff"
+  },
+  customizeToolbar: {
+    minHeight: 36
   },
   title: {
     flexGrow: 1
@@ -48,12 +56,32 @@ const NavBar = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar className={classes.Appbar} position="static">
-        <Toolbar>
-          <Button className={classes.buttonRoot} variant="text" color="#fff">
+      <AppBar className={classes.Appbar} position="fixed">
+        <Toolbar className={classes.customizeToolbar}>
+          <Button
+            className={classes.buttonRoot}
+            activeClassName={classes.active}
+            exact
+            disableRipple
+            disableFocusRipple
+            disableElevation
+            component={NavLink}
+            to="/home"
+            color="#fff"
+          >
             Home
           </Button>
-          <Button className={classes.buttonRoot} variant="text" color="#fff">
+          <Button
+            className={classes.buttonRoot}
+            activeClassName={classes.active}
+            exact
+            disableRipple
+            disableFocusRipple
+            disableElevation
+            component={NavLink}
+            to="/patientanomalydashboard"
+            color="#fff"
+          >
             Time Series Analysis
           </Button>
           <Grid

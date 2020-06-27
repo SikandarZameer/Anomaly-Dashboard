@@ -13,10 +13,10 @@ export default class doctorsChart extends Component {
 
   render() {
     return (
-      <div style={{ padding: "15px", height: "100vh" }}>
+      <div style={{ padding: "15px", marginTop: "40px" }}>
         <CssBaseline />
-        <div style={{ marginLeft: "20px", height: "50%", marginRight: "20px" }}>
-          <Grid container spacing={2}>
+        <div style={{ marginLeft: "20px", marginRight: "20px" }}>
+          <Grid container spacing={1}>
             <Grid item xs={8}>
               <ChartCard title="Percentage Anomalies" chart={<BarGrouped />} />
             </Grid>
@@ -28,13 +28,13 @@ export default class doctorsChart extends Component {
         </div>
         <div
           style={{
-            marginTop: "10px",
+            marginTop: "5px",
             marginLeft: "20px",
-            height: "50%",
+
             marginRight: "20px"
           }}
         >
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={6}>
               <ChartCard title="Hospital" chart={<BarStacked />} />
             </Grid>

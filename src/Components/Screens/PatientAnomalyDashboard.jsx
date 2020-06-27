@@ -14,10 +14,10 @@ export default class doctorsChart extends Component {
 
   render() {
     return (
-      <div style={{ padding: "15px", height: "100vh" }}>
+      <div style={{ padding: "15px", marginTop: "40px" }}>
         <CssBaseline />
-        <div style={{ marginLeft: "20px", height: "40%", marginRight: "20px" }}>
-          <Grid container spacing={2}>
+        <div style={{ marginLeft: "20px", marginRight: "20px" }}>
+          <Grid container spacing={1}>
             <Grid item xs={12}>
               <ChartCard title="Patient" chart={<LineCust />} />
             </Grid>
@@ -25,13 +25,12 @@ export default class doctorsChart extends Component {
         </div>
         <div
           style={{
-            marginTop: "10px",
+            marginTop: "5px",
             marginLeft: "20px",
-            height: "50%",
             marginRight: "20px"
           }}
         >
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={6}>
               <ChartCard
                 title="Symptom to Doctor Anomaly"
