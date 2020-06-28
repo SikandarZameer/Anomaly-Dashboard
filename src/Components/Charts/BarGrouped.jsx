@@ -5,11 +5,24 @@ import { Bar } from "react-chartjs-2";
 
 export default class BarGrouped extends Component {
   static defaultProps = {
-    labels: ["Hospital", "Doctor", "Pharmacy", "Laboratary", "Patient"],
+    labels: [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC"
+    ],
     data: {
-      accepted: [65, 59, 80, 81, 56],
-      pending: [45, 79, 50, 41, 16],
-      rejected: [35, 99, 100, 61, 6]
+      accepted: [65, 59, 80, 81, 56, 59, 45, 150, 2, 54, 88, 23],
+      pending: [45, 79, 50, 41, 16, 45, 23, 78, 56, 12, 32, 12],
+      rejected: [35, 99, 100, 61, 6, 65, 59, 80, 81, 56, 45, 79]
     }
   };
 

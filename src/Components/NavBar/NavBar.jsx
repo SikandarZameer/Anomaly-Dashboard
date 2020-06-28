@@ -101,7 +101,7 @@ class NavBar extends Component {
               to="/patientanomalydashboard"
               color="#fff"
             >
-              Time Series Analysis
+              Patient Analysis
             </Button>
             <Grid
               container

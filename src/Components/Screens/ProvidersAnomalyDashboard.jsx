@@ -77,11 +77,17 @@ export default class doctorsChart extends Component {
         >
           <Grid container spacing={1}>
             <Grid item xs={6}>
-              <ChartCard title="Hospital" chart={<BarStacked />} />
+              <ChartCard
+                title="Symptom to Diagnosis Anmalies"
+                chart={<BarStacked />}
+              />
             </Grid>
 
             <Grid item xs={6}>
-              <ChartCard title="Doctor" chart={<BarStacked />} />
+              <ChartCard
+                title="Disgnosis to Services Anmalies"
+                chart={<BarStacked />}
+              />
             </Grid>
           </Grid>
         </div>
