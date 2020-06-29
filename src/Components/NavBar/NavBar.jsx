@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import SearchBar from "./SearchBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import AddRule from "../Add_Rule/Add_Rule";
 
 const styles = theme => ({
   root: {
@@ -126,6 +127,9 @@ class NavBar extends Component {
                 justify="flex-end"
                 alignItems="center"
               >
+                <Grid item>
+                  <AddRule />
+                </Grid>
                 <Grid item>
                   <IconButton
                     style={{ marginRight: "5px" }}

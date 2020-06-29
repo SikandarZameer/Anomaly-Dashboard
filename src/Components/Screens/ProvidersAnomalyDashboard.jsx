@@ -78,14 +78,14 @@ export default class doctorsChart extends Component {
           <Grid container spacing={1}>
             <Grid item xs={6}>
               <ChartCard
-                title="Symptom to Diagnosis Anmalies"
+                title="Symptom to Diagnosis Anomalies"
                 chart={<BarStacked />}
               />
             </Grid>
 
             <Grid item xs={6}>
               <ChartCard
-                title="Disgnosis to Services Anmalies"
+                title="Disgnosis to Services Anomalies"
                 chart={<BarStacked />}
               />
             </Grid>
