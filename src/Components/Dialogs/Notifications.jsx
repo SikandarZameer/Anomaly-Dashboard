@@ -93,7 +93,7 @@ class NotificationMenu extends React.Component {
   onItemClick = (num, id) => {
     this.getDetailsData();
 
-    this.setState({
+    this.setState(st => ({
       open: true,
       anchorEl: null,
       openMRS_no: num,
@@ -109,7 +109,7 @@ class NotificationMenu extends React.Component {
         minute: "numeric"
       }),
       date: new Date().toLocaleDateString()
-    });
+    }));
     console.log(num);
     console.log(id);
   };
