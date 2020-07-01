@@ -33,6 +33,7 @@ class NotificationMenu extends React.Component {
       openMRS_no: null,
       anomaly_id: null,
       anomalies: [],
+      arrayLength: null,
       open: false,
       openreason: false,
       openok: false,
@@ -180,9 +181,9 @@ class NotificationMenu extends React.Component {
       }
     });
   };
-
   render() {
     const { anchorEl } = this.state;
+    const arrayLength = this.state.anomalies.length;
     const anomalylist = this.state.anomalies.map(anomaly => (
       <MenuItemWrapper
         onItemClick={this.onItemClick}
@@ -213,7 +214,7 @@ class NotificationMenu extends React.Component {
             style={{ marginRight: "5px" }}
             aria-label="show 17 new notifications"
           >
-            <Badge badgeContent={200} color="secondary">
+            <Badge badgeContent={arrayLength} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
