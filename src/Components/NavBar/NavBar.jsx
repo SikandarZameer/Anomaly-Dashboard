@@ -6,13 +6,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Badge from "@material-ui/core/Badge";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
 import SearchBar from "./SearchBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AddRule from "../Add_Rule/Add_Rule";
+import Notification from "../Dialogs/Notifications";
 
 const styles = theme => ({
   root: {
@@ -29,7 +27,7 @@ const styles = theme => ({
     backgroundColor: "#fff"
   },
   customizeToolbar: {
-    minHeight: 36
+    minHeight: 40
   },
   title: {
     flexGrow: 1
@@ -111,35 +109,28 @@ class NavBar extends Component {
               alignItems="center"
             >
               <Grid item xs={1} />
-              <Grid item xs={7}>
+              <Grid item xs={6}>
                 <div className={classes.divSearch}>
                   {this.state.todisplay && (
                     <SearchBar callback_func={this.props.callback_func} />
                   )}
                 </div>
               </Grid>
-              <Grid item xs={1} />
               <Grid
                 item
                 container
-                xs={3}
+                xs={5}
                 direction="row"
-                justify="flex-end"
+                justify="center"
                 alignItems="center"
               >
                 <Grid item>
-                  <AddRule />
+                  <Notification />
                 </Grid>
                 <Grid item>
-                  <IconButton
-                    style={{ marginRight: "5px" }}
-                    aria-label="show 17 new notifications"
-                  >
-                    <Badge badgeContent={200} color="secondary">
-                      <NotificationsIcon />
-                    </Badge>
-                  </IconButton>
+                  <AddRule />
                 </Grid>
+
                 <Grid item>
                   <Avatar src="/broken-image.jpg" classname={classes.avatar} />
                 </Grid>
